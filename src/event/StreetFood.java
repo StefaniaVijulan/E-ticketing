@@ -15,8 +15,8 @@ public class StreetFood extends Event{
 
     public StreetFood(){}
 
-    public StreetFood(Location location, String name_event, Integer number_of_tickets, LocalDate date_start, LocalDate date_end, Hour hour_start, Hour hour_end, Integer number_of_pause, Float price_rented_space) {
-        super(location, name_event, number_of_tickets, date_start, date_end, hour_start, hour_end, number_of_pause);
+    public StreetFood(Integer idEvent, Location location, String name_event, Integer number_of_tickets, LocalDate date_start, LocalDate date_end, Hour hour_start, Hour hour_end, Integer number_of_pause, Float price_rented_space) {
+        super(idEvent, location, name_event, number_of_tickets, date_start, date_end, hour_start, hour_end, number_of_pause);
         this.price_rented_space = price_rented_space;
     }
 
@@ -69,7 +69,7 @@ public class StreetFood extends Event{
     @Override
     public String toString() {
         return "StreetFood: " +
-                "\n\t Location\n" + getLocation() +
+                "\n\t Location name: " + getLocation().getName() +
                 "\n\t Name event: " +getName_event()+
                 "\n\t Number of ticket: " +getNumber_of_tickets()+
                 "\n\t Data start: " + getDate_start() +
@@ -77,12 +77,19 @@ public class StreetFood extends Event{
                 "\n\t Data end: " + getDate_end() +
                 "\n\t Hour end: " +getHour_end() +
                 "\n\t Number of break: "+getNumber_of_pause() +
-                "\n\t Price rented space: " + price_rented_space +
-                '}';
+                "\n\t Price rented space: " + price_rented_space + "\n";
     }
     public float ticket_value(){
         float price_ticket;
         price_ticket = (this.getLocation().price_location() + price_rented_space ) / getNumber_of_tickets();
         return price_ticket;
+    }
+
+    public Float getPrice_rented_space() {
+        return price_rented_space;
+    }
+
+    public void setPrice_rented_space(Float price_rented_space) {
+        this.price_rented_space = price_rented_space;
     }
 }

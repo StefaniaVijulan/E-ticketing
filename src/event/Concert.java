@@ -2,7 +2,6 @@ package event;
 
 import location.Location;
 
-import java.security.Provider;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -17,8 +16,8 @@ public class Concert extends Event {
 
     public Concert(){}
 
-    public Concert(Location location, String name_event, Integer number_of_tickets, LocalDate date_start, LocalDate date_end, Hour hour_start, Hour hour_end, Integer number_of_pause, String name_of_singer, Float singer_price) {
-        super(location, name_event, number_of_tickets, date_start, date_end, hour_start, hour_end, number_of_pause);
+    public Concert(Integer idEvent, Location location, String name_event, Integer number_of_tickets, LocalDate date_start, LocalDate date_end, Hour hour_start, Hour hour_end, Integer number_of_pause, String name_of_singer, Float singer_price) {
+        super(idEvent, location, name_event, number_of_tickets, date_start, date_end, hour_start, hour_end, number_of_pause);
         this.name_of_singer = name_of_singer;
         this.singer_price = singer_price;
     }
@@ -52,8 +51,8 @@ public class Concert extends Event {
         System.out.print("\t\tData start: ");
         String date_start1= read.next();
         try {
-           Date data_start = new SimpleDateFormat("yyyy-MM-dd").parse(date_start1);
-           this.setDate_start(convertToLocalDateViaInstant(data_start));
+            Date data_start = new SimpleDateFormat("yyyy-MM-dd").parse(date_start1);
+            this.setDate_start(convertToLocalDateViaInstant(data_start));
         }
         catch (ParseException e){e.printStackTrace();}
 
@@ -85,7 +84,7 @@ public class Concert extends Event {
     @Override
     public String toString() {
         return "Concert:" +
-                "\n\t Location\n" + getLocation() +
+                "\n\t Location name: " + getLocation().getName() +
                 "\n\t Name event: " +getName_event()+
                 "\n\t Number of ticket: " +getNumber_of_tickets()+
                 "\n\t Data start: " + getDate_start() +
@@ -93,12 +92,28 @@ public class Concert extends Event {
                 "\n\t Data end: " + getDate_end() +
                 "\n\t Hour end: " +getHour_end() +
                 "\n\t Number of break: "+getNumber_of_pause() +
-                "\n\t Singer price: " + singer_price;
+                "\n\t Singer price: " + singer_price+"\n";
     }
 
     public float ticket_value(){
-            float price_ticket;
-            price_ticket = (this.getLocation().price_location()+ this.singer_price ) / getNumber_of_tickets();
-            return price_ticket;
+        float price_ticket;
+        price_ticket = (this.getLocation().price_location()+ this.singer_price ) / getNumber_of_tickets();
+        return price_ticket;
+    }
+
+    public String getName_of_singer() {
+        return name_of_singer;
+    }
+
+    public void setName_of_singer(String name_of_singer) {
+        this.name_of_singer = name_of_singer;
+    }
+
+    public String getSinger_price() {
+        return singer_price.toString();
+    }
+
+    public void setSinger_price(Float singer_price) {
+        this.singer_price = singer_price;
     }
 }

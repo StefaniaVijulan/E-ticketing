@@ -159,9 +159,57 @@ public class GuestHouse extends Location{
             price_location = price_location + 105;
         if (conference_room)
             price_location = price_location + 100;
-            price_location = price_location + rooms_price *number_of_rooms;
+        price_location = price_location + rooms_price *number_of_rooms;
         if(pool)
             price_location = price_location + 35 * number_of_rooms;
         return price_location;
+    }
+
+    public Integer getNumber_of_starts() {
+        return number_of_starts;
+    }
+
+    public void setNumber_of_starts(Integer number_of_starts) {
+        this.number_of_starts = number_of_starts;
+    }
+
+    public Boolean getPets() {
+        return pets;
+    }
+
+    public void setPets(Boolean pets) {
+        this.pets = pets;
+    }
+
+    public Float getNumber_of_rooms() {
+        return number_of_rooms;
+    }
+
+    public void setNumber_of_rooms(Float number_of_rooms) {
+        this.number_of_rooms = number_of_rooms;
+    }
+
+    public Boolean getConference_room() {
+        return conference_room;
+    }
+
+    public void setConference_room(Boolean conference_room) {
+        this.conference_room = conference_room;
+    }
+
+    public Float getRooms_price() {
+        return rooms_price;
+    }
+
+    public void setRooms_price(Float rooms_price) {
+        this.rooms_price = rooms_price;
+    }
+
+    public Boolean getPool() {
+        return pool;
+    }
+
+    public void setPool(Boolean pool) {
+        this.pool = pool;
     }
 }

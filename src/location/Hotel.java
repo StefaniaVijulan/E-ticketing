@@ -58,7 +58,7 @@ public class Hotel extends Location{
         else
             location_address= location_address+ "\n\t Without conference room";
 
-            location_address = location_address + "\n\t With " + number_of_rooms+ " rooms";
+        location_address = location_address + "\n\t With " + number_of_rooms+ " rooms";
 
         return  location_address;
     }
@@ -141,7 +141,7 @@ public class Hotel extends Location{
         this.number_of_rooms = roomsnumber;
 
 
-        }
+    }
 
 
     @Override
@@ -152,7 +152,47 @@ public class Hotel extends Location{
             price_location = price_location + 150;
         if (conference_room)
             price_location = price_location + 100;
-            price_location = price_location +  number_of_rooms * price_of_room;
+        price_location = price_location +  number_of_rooms * price_of_room;
         return price_location;
+    }
+
+    public Integer getNumber_of_starts() {
+        return number_of_starts;
+    }
+
+    public void setNumber_of_starts(Integer number_of_starts) {
+        this.number_of_starts = number_of_starts;
+    }
+
+    public Boolean getPets() {
+        return pets;
+    }
+
+    public void setPets(Boolean pets) {
+        this.pets = pets;
+    }
+
+    public Boolean getConference_room() {
+        return conference_room;
+    }
+
+    public void setConference_room(Boolean conference_room) {
+        this.conference_room = conference_room;
+    }
+
+    public Float getPrice_of_room() {
+        return price_of_room;
+    }
+
+    public void setPrice_of_room(Float price_of_room) {
+        this.price_of_room = price_of_room;
+    }
+
+    public Integer getNumber_of_rooms() {
+        return number_of_rooms;
+    }
+
+    public void setNumber_of_rooms(Integer number_of_rooms) {
+        this.number_of_rooms = number_of_rooms;
     }
 }

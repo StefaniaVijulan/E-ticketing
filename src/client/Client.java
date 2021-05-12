@@ -7,7 +7,7 @@ public class Client {
     protected String last_name;
     protected String phone_number;
     protected String email;
-    private String password;
+    protected String password;
 
     public  Client (){
         this.first_name="";
@@ -93,7 +93,7 @@ public class Client {
             else{
                 System.out.println("Sorry!Email address is not good! ");
             }}
-            this.email = email;
+        this.email = email;
 
         String phone;
         while (true){
@@ -118,6 +118,6 @@ public class Client {
                 "\n\tLlast name: " + last_name +
                 "\n\tPhone number: " + phone_number +
                 "\n\t Email: " + email + '\'' +
-                '}';
+                '\n';
     }
 }

@@ -17,8 +17,8 @@ public class SchoolCamp extends Event{
 
     public  SchoolCamp(){}
 
-    public SchoolCamp(Location location, String name_event, Integer number_of_tickets, LocalDate date_start, LocalDate date_end, Hour hour_start, Hour hour_end, Integer number_of_pause, Integer number_of_breakfast, Integer number_of_dinner, Integer number_of_lunch) {
-        super(location, name_event, number_of_tickets, date_start, date_end, hour_start, hour_end, number_of_pause);
+    public SchoolCamp(Integer idEvent, Location location, String name_event, Integer number_of_tickets, LocalDate date_start, LocalDate date_end, Hour hour_start, Hour hour_end, Integer number_of_pause, Integer number_of_breakfast, Integer number_of_dinner, Integer number_of_lunch) {
+        super(idEvent, location, name_event, number_of_tickets, date_start, date_end, hour_start, hour_end, number_of_pause);
         this.number_of_breakfast = number_of_breakfast;
         this.number_of_dinner = number_of_dinner;
         this.number_of_lunch = number_of_lunch;
@@ -85,7 +85,7 @@ public class SchoolCamp extends Event{
     @Override
     public String toString() {
         return "SchoolCamp: " +
-                "\n\t Location\n" + getLocation() +
+                "\n\t Location: " + getLocation().getName() +
                 "\n\t Name event: " +getName_event()+
                 "\n\t Number of ticket: " +getNumber_of_tickets()+
                 "\n\t Data start: " + getDate_start() +
@@ -96,11 +96,35 @@ public class SchoolCamp extends Event{
 
                 "\n\t Number of breakfast: " + number_of_breakfast +
                 "\n\t Number of dinner: " + number_of_dinner +
-                "\n\t Number of lunch: " + number_of_lunch;
+                "\n\t Number of lunch: " + number_of_lunch+"\n";
     }
     public float ticket_value(){
         float price_ticket;
         price_ticket = (this.getLocation().price_location() + number_of_dinner * 40 + number_of_lunch *32  +number_of_breakfast * 99 ) / getNumber_of_tickets();
         return price_ticket;
+    }
+
+    public Integer getNumber_of_breakfast() {
+        return number_of_breakfast;
+    }
+
+    public void setNumber_of_breakfast(Integer number_of_breakfast) {
+        this.number_of_breakfast = number_of_breakfast;
+    }
+
+    public Integer getNumber_of_dinner() {
+        return number_of_dinner;
+    }
+
+    public void setNumber_of_dinner(Integer number_of_dinner) {
+        this.number_of_dinner = number_of_dinner;
+    }
+
+    public Integer getNumber_of_lunch() {
+        return number_of_lunch;
+    }
+
+    public void setNumber_of_lunch(Integer number_of_lunch) {
+        this.number_of_lunch = number_of_lunch;
     }
 }

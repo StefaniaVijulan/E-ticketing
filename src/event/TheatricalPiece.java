@@ -20,8 +20,8 @@ public class TheatricalPiece extends Event{
 
     public TheatricalPiece(){}
 
-    public TheatricalPiece(Location location, String name_event, Integer number_of_tickets, LocalDate date_start, LocalDate date_end, Hour hour_start, Hour hour_end, Integer number_of_pause, String theme, String name_of_team, Float price_of_team, Type_ticket type_ticket) {
-        super(location, name_event, number_of_tickets, date_start, date_end, hour_start, hour_end, number_of_pause);
+    public TheatricalPiece(Integer idEvent, Location location, String name_event, Integer number_of_tickets, LocalDate date_start, LocalDate date_end, Hour hour_start, Hour hour_end, Integer number_of_pause, String theme, String name_of_team, Float price_of_team, Type_ticket type_ticket) {
+        super(idEvent, location, name_event, number_of_tickets, date_start, date_end, hour_start, hour_end, number_of_pause);
         this.theme = theme;
         this.name_of_team = name_of_team;
         this.price_of_team = price_of_team;
@@ -101,7 +101,7 @@ public class TheatricalPiece extends Event{
     @Override
     public String toString() {
         return "TheatricalPiece: " +
-                "\n\t Location\n" + getLocation() +
+                "\n\t Location name: " + getLocation() +
                 "\n\t Name event: " +getName_event()+
                 "\n\t Number of ticket: " +getNumber_of_tickets()+
                 "\n\t Data start: " + getDate_start() +
@@ -112,11 +112,43 @@ public class TheatricalPiece extends Event{
                 "\n\t Theme: " + theme  +
                 "\n\t Name of team: " + name_of_team+
                 "\n\t Price of team: " + price_of_team +
-                "\n\t Type ticket=" + type_ticket;
+                "\n\t Type ticket=" + type_ticket +"\n";
     }
     public float ticket_value() {
         float price_ticket;
         price_ticket = (this.getLocation().price_location() + price_of_team ) / getNumber_of_tickets();
         return price_ticket;
+    }
+
+    public String getTheme() {
+        return theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
+    }
+
+    public String getName_of_team() {
+        return name_of_team;
+    }
+
+    public void setName_of_team(String name_of_team) {
+        this.name_of_team = name_of_team;
+    }
+
+    public Float getPrice_of_team() {
+        return price_of_team;
+    }
+
+    public void setPrice_of_team(Float price_of_team) {
+        this.price_of_team = price_of_team;
+    }
+
+    public Type_ticket getType_ticket() {
+        return type_ticket;
+    }
+
+    public void setType_ticket(Type_ticket type_ticket) {
+        this.type_ticket = type_ticket;
     }
 }

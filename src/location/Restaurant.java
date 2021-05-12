@@ -169,4 +169,60 @@ public class Restaurant extends Location {
             price_location = price_location + scene_price;
         return price_location;
     }
+
+    public Integer getNumber_of_seats() {
+        return number_of_seats;
+    }
+
+    public void setNumber_of_seats(Integer number_of_seats) {
+        this.number_of_seats = number_of_seats;
+    }
+
+    public Integer getTable_seats() {
+        return table_seats;
+    }
+
+    public void setTable_seats(Integer table_seats) {
+        this.table_seats = table_seats;
+    }
+
+    public Float getPrice_per_seats() {
+        return price_per_seats;
+    }
+
+    public void setPrice_per_seats(Float price_per_seats) {
+        this.price_per_seats = price_per_seats;
+    }
+
+    public Boolean getScene() {
+        return scene;
+    }
+
+    public void setScene(Boolean scene) {
+        this.scene = scene;
+    }
+
+    public Float getScene_price() {
+        return scene_price;
+    }
+
+    public void setScene_price(Float scene_price) {
+        this.scene_price = scene_price;
+    }
+
+    public Boolean getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(Boolean equipment) {
+        this.equipment = equipment;
+    }
+
+    public Float getPrice_of_equipment() {
+        return price_of_equipment;
+    }
+
+    public void setPrice_of_equipment(Float price_of_equipment) {
+        this.price_of_equipment = price_of_equipment;
+    }
 }

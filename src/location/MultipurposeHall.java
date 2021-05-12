@@ -153,4 +153,52 @@ public class MultipurposeHall extends Location{
             price_location = price_location + price_of_the_video_equipment;
         return price_location;
     }
+
+    public Integer getNumber_of_seats() {
+        return number_of_seats;
+    }
+
+    public void setNumber_of_seats(Integer number_of_seats) {
+        this.number_of_seats = number_of_seats;
+    }
+
+    public Float getPrice_per_seats() {
+        return price_per_seats;
+    }
+
+    public void setPrice_per_seats(Float price_per_seats) {
+        this.price_per_seats = price_per_seats;
+    }
+
+    public Boolean getAudio_equipment() {
+        return audio_equipment;
+    }
+
+    public void setAudio_equipment(Boolean audio_equipment) {
+        this.audio_equipment = audio_equipment;
+    }
+
+    public Float getPrice_of_the_audio_equipment() {
+        return price_of_the_audio_equipment;
+    }
+
+    public void setPrice_of_the_audio_equipment(Float price_of_the_audio_equipment) {
+        this.price_of_the_audio_equipment = price_of_the_audio_equipment;
+    }
+
+    public Boolean getVideo_equipment() {
+        return video_equipment;
+    }
+
+    public void setVideo_equipment(Boolean video_equipment) {
+        this.video_equipment = video_equipment;
+    }
+
+    public Float getPrice_of_the_video_equipment() {
+        return price_of_the_video_equipment;
+    }
+
+    public void setPrice_of_the_video_equipment(Float price_of_the_video_equipment) {
+        this.price_of_the_video_equipment = price_of_the_video_equipment;
+    }
 }

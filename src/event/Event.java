@@ -1,16 +1,12 @@
 package event;
 
-import client.Buyer;
 import location.Location;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 
 public abstract  class Event implements Comparable<Event>{
-
+    private Integer idEvent = null;
     private Location location;
     private String name_event;
     private Integer number_of_tickets;
@@ -25,7 +21,8 @@ public abstract  class Event implements Comparable<Event>{
 
     }
 
-    public Event(Location location, String name_event, Integer number_of_tickets, LocalDate date_start, LocalDate date_end, Hour hour_start, Hour hour_end, Integer number_of_pause) {
+    public Event(Integer idEvent, Location location, String name_event, Integer number_of_tickets, LocalDate date_start, LocalDate date_end, Hour hour_start, Hour hour_end, Integer number_of_pause) {
+        this.idEvent = idEvent +1;
         this.location = location;
         this.name_event = name_event;
         this.number_of_tickets = number_of_tickets;
@@ -34,8 +31,6 @@ public abstract  class Event implements Comparable<Event>{
         this.hour_start = hour_start;
         this.hour_end = hour_end;
         this.number_of_pause = number_of_pause;
-      //  this.buyerList = new ArrayList<Buyer>();
-
     }
 
     public int compareTo(Event ev){
@@ -106,6 +101,10 @@ public abstract  class Event implements Comparable<Event>{
     }
 
     public abstract void Read_Info();
+
+    public Integer getIdEvent() {
+        return idEvent;
+    }
 
     @Override
     public abstract String toString();

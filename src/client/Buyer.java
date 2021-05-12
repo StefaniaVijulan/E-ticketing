@@ -12,7 +12,7 @@ public class Buyer extends  Client{
         this.age = age;
     }
 
-    public void Read_Info(String last_name, String first_name, String email, String phone){
+    public void Read_Info(String last_name, String first_name, String email, String phone, String password){
         Scanner read = new Scanner(System.in);
 
 
@@ -20,6 +20,7 @@ public class Buyer extends  Client{
         this.first_name = first_name;
         this.email = email;
         this.phone_number = phone;
+        this.password = password;
         System.out.print("\tAge:");
         this.age =read.nextInt();
 
@@ -28,10 +29,19 @@ public class Buyer extends  Client{
     @Override
     public String toString() {
         return "Buyer info "+
-                 "\n\tFirst name: " + getFirst_name() +
+                "\n\tFirst name: " + getFirst_name() +
                 "\n\tLast name: " + getLast_name() +
                 "\n\tEmail address: " + getEmail() +
                 "\n\tPhone nuber: " + getPhone_number() +
                 "\n\tAge: " + age ;
+    }
+
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }
