@@ -41,7 +41,7 @@ public class LocationService {
         for (int i = 0; i < nr; i++) {
 
             Scanner read1 = new Scanner(System.in);
-            System.out.println("\t\tWhat type of location do you want to add?\n\t\t\t1. Hotel\n\t\t\t2. Guest House \n\t\t\t3. Multipurpose hall\n\t\t\t4. Restaurant ");
+            System.out.println("What type of location do you want to add?\n\t\t\t1. Hotel\n\t\t\t2. Guest House \n\t\t\t3. Multipurpose hall\n\t\t\t4. Restaurant ");
             System.out.print("\t\t\tAnswer: ");
             String types = read1.nextLine();
             csvAudit.write_in_audit("Add", types);

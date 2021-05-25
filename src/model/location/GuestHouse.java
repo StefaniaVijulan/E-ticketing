@@ -11,7 +11,7 @@ public class GuestHouse extends Location{
     private Boolean pool;
 
     public GuestHouse() {
-        super();
+
     }
 
     public GuestHouse(Zone zone, String name, String country, String town, String street, String number, Integer number_of_stars, Boolean pets, Float number_of_rooms, Boolean conference_room, Float rooms_price, Boolean pool) {
@@ -148,7 +148,7 @@ public class GuestHouse extends Location{
         return  location_address;
     }
 
-    public Integer getNumber_of_stars() {
+    public  Integer getNumber_of_stars() {
         return number_of_stars;
     }
 

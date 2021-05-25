@@ -102,7 +102,7 @@ public class Restaurant extends Location {
         this.table_seats = table;
 
         System.out.print("With equipment?\n\t1. Yes\n\t2. No");
-        System.out.print("\n\tAnswer: ");
+        System.out.print("\n\tAnswer1/2: ");
         Integer equipment1 = read.nextInt();
        // equipment1 = equipment1.toUpperCase();
         if(equipment1 == 1)

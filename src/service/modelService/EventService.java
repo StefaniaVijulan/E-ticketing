@@ -92,7 +92,7 @@ public class EventService {
     }
     public void SeeEvent() throws IOException {
         Scanner read1 = new Scanner(System.in);
-        csvAudit.write_in_audit("Print","Locations");
+        csvAudit.write_in_audit("See","Events");
 
         System.out.println("What kind of events do you want to see?");
         System.out.println("\t1. Concert\n\t2. StreetFood\n\t3. SchoolCamp\n\t4. TheatricalPiece");
@@ -120,7 +120,8 @@ public class EventService {
             }
         }
     }
-    public void SeeOneEvent(){
+    public void SeeOneEvent()throws IOException {
+        csvAudit.write_in_audit("See","Event");
         System.out.print("The name of the event you want to see: ");
         Scanner read1 = new Scanner(System.in);
         String name_ev = read1.nextLine();

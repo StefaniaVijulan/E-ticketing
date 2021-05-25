@@ -106,15 +106,15 @@ public class MultipurposeHall extends Location {
         this.price_per_seats = price_per_seats;
 
         System.out.print("With audio system?\n\t1. Yes\n\t2. No");
-        System.out.print("\n\tAnswer: ");
-        String audio = read.nextLine();
-        audio = audio.toUpperCase();
-        if (audio.equals("YES")) {
+        System.out.print("\n\tAnswer1/2: ");
+        Integer audio = read.nextInt();
+      //  audio = audio.toUpperCase();
+        if (audio==1) {
             this.audio_equipment = Boolean.TRUE;
             System.out.print("Price of the audio equipment: ");
             float price_audio = read.nextFloat();
             this.price_of_the_audio_equipment = price_audio;
-        } else if (audio.equals("NO")) {
+        } else if (audio ==2 ) {
             this.audio_equipment = Boolean.FALSE;
             this.price_of_the_audio_equipment = 0.0f;
         } else {
@@ -122,15 +122,17 @@ public class MultipurposeHall extends Location {
         }
 
         System.out.print("With video system?\n\t1. Yes\n\t2. No");
-        String video = read.nextLine();
-        video = video.toUpperCase();
-        if (video.equals("YES")) {
-            this.audio_equipment = Boolean.TRUE;
+        System.out.print("\n\tAnswer1/2: ");
+
+        Integer video = read.nextInt();
+
+        if (video==1) {
+            this.video_equipment = Boolean.TRUE;
             System.out.print("Price of the audio equipment:");
             float price_video = read.nextFloat();
             this.price_of_the_video_equipment = price_video;
-        } else if (video.equals("NO")) {
-            this.audio_equipment = Boolean.FALSE;
+        } else if (video==2) {
+            this.video_equipment = Boolean.FALSE;
             this.price_of_the_video_equipment = 0.0f;
         } else {
             System.out.print("Try again!");
